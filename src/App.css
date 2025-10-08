@@ -306,6 +306,17 @@ body.dark-mode .chido-logo .tagline {
   }
 }
 
+/* Mostrar Chip solo en desktop */
+.chip-desktop-only {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .chip-desktop-only {
+    display: block !important;
+  }
+}
+
 @media (max-width: 768px) {
   .App-header {
     padding: 2rem 1rem;

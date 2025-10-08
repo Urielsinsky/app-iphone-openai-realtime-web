@@ -814,15 +814,17 @@ export const ScenarioSelector: React.FC<ScenarioSelectorProps> = ({ onSelectScen
     }}>
       {/* Header con estilo vibrante */}
       <div style={{ textAlign: 'center', marginBottom: '48px', position: 'relative' }}>
-        {/* Chip character - mejor posicionado */}
+        {/* Chip character - oculto en móvil, visible en desktop */}
         <div style={{
           position: 'absolute',
           top: '-40px',
           right: '0px',
           width: '200px',
           height: '200px',
-          zIndex: 10
-        }}>
+          zIndex: 10,
+          display: 'none'
+        }}
+        className="chip-desktop-only">
           <img
             src="/chip.png"
             alt="Chip"
