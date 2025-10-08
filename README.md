@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# 🌮 ChidoLingo Web
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Versión web de validación de ChidoLingo - Aplicación para aprender español con IA conversacional.
+
+Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
