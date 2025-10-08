@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { ChatMessage } from '../types';
 import { OpenAIRealtimeService } from '../services/openai-realtime';
 import { Scenario } from './ScenarioSelector';
-import { VoiceOrb } from './VoiceOrb';
+// import { VoiceOrb } from './VoiceOrb';
 import { TypingText } from './TypingText';
 import { useDailyLimit } from '../hooks/useDailyLimit';
 
@@ -28,7 +28,7 @@ export const ConversationChat: React.FC<ConversationChatProps> = ({ scenario, on
 
   // Hook de límite diario
   const {
-    timeRemaining,
+    // timeRemaining,
     isLimitReached,
     startTracking,
     stopTracking,
@@ -173,7 +173,7 @@ export const ConversationChat: React.FC<ConversationChatProps> = ({ scenario, on
         console.log('⚙️ Sesión actualizada');
         break;
     }
-  }, []);
+  }, [currentChipMessage]);
 
   const connectToOpenAI = useCallback(async () => {
     // Verificar límite diario
