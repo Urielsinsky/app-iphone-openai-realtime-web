@@ -3,12 +3,10 @@ import './App.css';
 import { ConversationChat } from './components/ConversationChat';
 import { ConversationChatDesignDemo } from './components/ConversationChatDesignDemo';
 import { ScenarioSelector, Scenario } from './components/ScenarioSelector';
-import { useDarkMode } from './hooks/useDarkMode';
 
 function App() {
   const [selectedScenario, setSelectedScenario] = useState<Scenario | null>(null);
   const [isDesignMode, setIsDesignMode] = useState(false);
-  // const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   return (
     <div className="App">
