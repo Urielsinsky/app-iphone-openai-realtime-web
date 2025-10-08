@@ -5,6 +5,7 @@ import { Scenario } from './ScenarioSelector';
 // import { VoiceOrb } from './VoiceOrb';
 import { TypingText } from './TypingText';
 import { useDailyLimit } from '../hooks/useDailyLimit';
+import './ConversationChat.css';
 
 interface ConversationChatProps {
   scenario: Scenario;
@@ -304,22 +305,9 @@ export const ConversationChat: React.FC<ConversationChatProps> = ({ scenario, on
       };
 
   return (
-    <div style={{
-      display: 'flex',
-      gap: '40px',
-      width: '100%',
-      maxWidth: '1400px',
-      height: 'calc(100vh - 120px)',
-      fontFamily: 'Nunito, -apple-system, BlinkMacSystemFont, sans-serif',
-      padding: '0 20px'
-    }}>
+    <div className="conversation-container">
       {/* Columna Izquierda - Escenario y Chip */}
-      <div style={{
-        flex: '0 0 65%',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '24px'
-      }}>
+      <div className="conversation-left-column">
         {/* Botón Back */}
         <button
           onClick={onBack}
@@ -355,14 +343,7 @@ export const ConversationChat: React.FC<ConversationChatProps> = ({ scenario, on
 
         {/* Título y descripción */}
         <div>
-          <h1 style={{
-            margin: '0 0 8px 0',
-            fontSize: '2.5rem',
-            fontWeight: 900,
-            color: '#1a1a1a',
-            letterSpacing: '-1px',
-            lineHeight: '1.1'
-          }}>{scenario.title}</h1>
+          <h1 className="scenario-title">{scenario.title}</h1>
           <p style={{
             margin: 0,
             fontSize: '1.1rem',
@@ -449,13 +430,7 @@ export const ConversationChat: React.FC<ConversationChatProps> = ({ scenario, on
               </p>
             </div>
           ) : (
-            <div style={{
-              textAlign: 'center',
-              minHeight: '80px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}>
+            <div className="chip-message-box">
               {!currentChipMessage ? (
                 <p style={{
                   fontSize: '1.2rem',
@@ -470,14 +445,7 @@ export const ConversationChat: React.FC<ConversationChatProps> = ({ scenario, on
               ) : (
                 <div
                   key={messageKey}
-                  className={isExiting ? 'chip-message-exit' : 'chip-message-enter'}
-                  style={{
-                    fontSize: '1.3rem',
-                    lineHeight: '1.5',
-                    fontWeight: 600,
-                    color: '#1a1a1a',
-                    margin: 0
-                  }}>
+                  className={`chip-message-text ${isExiting ? 'chip-message-exit' : 'chip-message-enter'}`}>
                   "{currentChipMessage}"
                 </div>
               )}
@@ -577,24 +545,7 @@ export const ConversationChat: React.FC<ConversationChatProps> = ({ scenario, on
       </div>
 
       {/* Columna Derecha - Información y Frases */}
-      <div style={{
-        flex: '0 0 35%',
-        background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.95) 100%)',
-        borderRadius: '20px',
-        padding: '32px',
-        boxShadow: `
-          0 2px 4px rgba(0, 0, 0, 0.02),
-          0 4px 8px rgba(0, 0, 0, 0.03),
-          0 8px 16px rgba(0, 0, 0, 0.04),
-          0 16px 32px rgba(0, 0, 0, 0.05),
-          inset 0 0 0 1px rgba(255, 255, 255, 0.6)
-        `,
-        border: '1px solid rgba(229, 231, 235, 0.5)',
-        display: 'flex',
-        flexDirection: 'column',
-        overflowY: 'auto',
-        backdropFilter: 'blur(10px)'
-      }}>
+      <div className="conversation-right-column">
         {/* Badges superiores */}
         <div style={{
           display: 'flex',

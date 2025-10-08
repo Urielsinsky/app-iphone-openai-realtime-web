@@ -1,0 +1,121 @@
+/* Conversation Chat Responsive Styles */
+
+.conversation-container {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  max-width: 1400px;
+  height: calc(100vh - 120px);
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 0 20px;
+}
+
+.conversation-left-column {
+  flex: 0 0 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.conversation-right-column {
+  flex: 0 0 35%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.95) 100%);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.02),
+    0 4px 8px rgba(0, 0, 0, 0.03),
+    0 8px 16px rgba(0, 0, 0, 0.04),
+    0 16px 32px rgba(0, 0, 0, 0.05),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(229, 231, 235, 0.5);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+}
+
+.chip-message-box {
+  text-align: center;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.chip-message-text {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.scenario-title {
+  margin: 0 0 8px 0;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+/* Mobile Styles */
+@media (max-width: 1024px) {
+  .conversation-container {
+    flex-direction: column;
+    height: auto;
+    min-height: calc(100vh - 120px);
+    gap: 24px;
+    padding: 0 16px;
+  }
+
+  .conversation-left-column {
+    flex: 1;
+    width: 100%;
+  }
+
+  .conversation-right-column {
+    flex: 1;
+    width: 100%;
+    padding: 24px 20px;
+    max-height: 400px;
+    order: -1; /* Mover arriba en móvil */
+  }
+
+  .scenario-title {
+    font-size: 1.8rem;
+  }
+
+  .chip-message-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .conversation-container {
+    padding: 0 12px;
+    gap: 16px;
+  }
+
+  .conversation-left-column {
+    gap: 16px;
+  }
+
+  .conversation-right-column {
+    padding: 20px 16px;
+  }
+
+  .scenario-title {
+    font-size: 1.5rem;
+  }
+
+  .chip-message-text {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}
